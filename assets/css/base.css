@@ -1,0 +1,233 @@
+:root {
+    --white-color: #ffffff;
+    --black-color: #000;
+    --text-color: #333;
+    --primary-color: #ee4d2d;
+    --boder-color: #e7e7e7;
+    --gold-color: #ffcf41;
+    --navbar-height: 34px;
+    --header-height: 120px;
+    --header-with-search-height: calc(var(--header-height) - var(--navbar-height));
+}
+
+* {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+/* Responsive */
+.grid {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto; 
+}
+
+.grid__full-width {
+    width: 100%;
+}
+
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+/* test */
+.grid__column-2 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 16.667%;
+}
+
+.grid__column-2-4 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 20%;
+}
+
+.grid__column-10 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 83.333%;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Modal layout */
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    animation: fadeIn ease-in 0.3s;
+}
+
+.modal__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+
+.modal__body {
+    margin: auto;
+    z-index: 3;
+}
+
+/* Button style */
+.btn {
+    min-width: 130px;
+    height: 32px;
+    border: none;
+    border-radius: 2px;
+    text-decoration: none;
+    font-size: 1.4rem;
+    padding: 0 12px;   
+    outline: none;
+    cursor: pointer;
+    color: var(--text-color);
+    background-color: var(--white-color);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.6rem;
+    box-shadow: 0px 1px 1px 0px #08080810;
+}
+
+.btn.btn-nomal:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+.btn.btn--size-s  {
+    height: 30px;
+    font-size: 1.2rem;
+    padding: 0 8px;
+}
+
+.btn.btn--primary {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.btn.btn--disable {
+    cursor: default;
+    background-color: #f7f7f7;
+    color: #999494;
+}
+
+/* Selection */
+
+.select-input {
+    position: relative;
+    height: 34px;
+    padding: 0 12px;
+    border-radius: 2px;
+    background-color: var(--white-color);
+    min-width: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 1px 1px 0px #08080810;
+}
+
+.select-input__label {
+    font-size: 1.4rem;
+}
+
+.select-input__icon {
+    font-size: 1.4rem;
+    color: rgb(131, 131, 131);
+    position: relative;
+}
+
+.select-input:hover .select-input__list {
+    display: block;
+    box-shadow: 0px 1px 2px 0px #08080810;
+}
+
+.select-input__list {
+    position: absolute;
+    list-style: none;
+    left: 0;
+    right: 0;
+    top: 26px;
+    border-radius: 2px;
+    background-color: var(--white-color);
+    box-shadow: 0px 1px 1px 0px #08080854;
+    padding: 10px 16px;
+    display: none;
+    z-index: 1;
+}
+
+.select-input__list::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 5px;
+    /* background-color: red; */
+    top: -3px;
+    left: 0;
+}
+
+.select-input__link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.3rem;
+    display: block;
+    padding: 4px 0;
+}
+
+.select-input__link:hover {
+    color: var(--primary-color);
+}
+
+/* Pagingation */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.pagination-item {
+    margin: 0 6px;
+}
+
+.pagination-item__link {
+    text-decoration: none;
+    font-size: 1.8rem;
+    color: #939393;
+    min-width: 40px;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    text-align: center;
+    border-radius: 2px;
+    font-weight: 300;
+}
+
+.pagination-item--active .pagination-item__link {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.pagination-item--active .pagination-item__link:hover {
+    filter: brightness(110%);
+}
+
